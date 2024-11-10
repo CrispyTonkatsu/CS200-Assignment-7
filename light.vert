@@ -14,10 +14,10 @@ uniform mat4 object_to_world;
 uniform mat4 world_to_ndc;
 
 out vec2 interp_world_position;
-out vec2 interp_tex_coord;
+out vec2 interp_texcoord;
 
 void main() {
-    interp_tex_coord = texcoord;
+    interp_texcoord = texcoord;
 
     vec4 world_position = object_to_world * position;
     interp_world_position = world_position.xy;
