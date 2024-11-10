@@ -44,15 +44,14 @@ target_link_libraries(TextureLoad PRIVATE glm::glm)
 add_library(TextureRender TextureRender.cpp)
 target_link_libraries(TextureRender PRIVATE glm::glm)
 
-# Linking all to demo driver
-add_executable(TextureRenderDemo TextureRenderDemo.cpp)
-target_link_libraries(TextureRenderDemo PRIVATE TextureRender TextureLoad Camera SquareMesh SolidRender Affine OpenGL glm::glm SDL2::SDL2 ${GLEW_LIBRARIES})
-include_directories(TextureRenderDemo ${GLEW_INCLUDE_DIRS})
+# DPTexturedMesh
+add_library(DPMesh DPTexturedMesh.cpp)
+target_link_libraries(DPMesh PRIVATE glm::glm)
 
 # Linking all to test driver
-add_executable(TextureRenderTest TextureRenderTest.cpp)
-target_link_libraries(TextureRenderTest PRIVATE TextureRender TextureLoad Camera SquareMesh SolidRender Affine OpenGL glm::glm SDL2::SDL2 ${GLEW_LIBRARIES})
-include_directories(TextureRenderTest ${GLEW_INCLUDE_DIRS})
+add_executable(LightTest LightTest.cpp)
+target_link_libraries(LightTest PRIVATE DPMesh TextureRender TextureLoad Camera SquareMesh SolidRender Affine OpenGL glm::glm SDL2::SDL2 ${GLEW_LIBRARIES})
+include_directories(LightTest ${GLEW_INCLUDE_DIRS})
 
 # Custom tests
 add_executable(Custom Custom.cpp)
