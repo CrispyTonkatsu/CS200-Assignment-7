@@ -1,3 +1,10 @@
+/**
+* @author Edgar Jose Donoso Mansilla (e.donosomansilla)
+* @file light.vert
+* @course CS200
+* @assignment 7
+*/
+
 #version 130
 
 in vec4 position;
